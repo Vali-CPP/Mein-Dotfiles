@@ -1,6 +1,9 @@
 configuration {
-  modes: [ combi ];
-  combi-modes: [ window, drun, run ];
+  modes: [ combi, window ];
+  combi-modes: [ drun ];
+  window-modes: [ window ];
 }
 //@theme "/usr/share/rofi/themes/DarkBlue.rasi"
-@theme "/usr/share/rofi/themes/sidebar.rasi"
+//@theme "/usr/share/rofi/themes/sidebar.rasi"
+//@theme "/usr/share/rofi/themes/DarkBlue.rasi"
+@theme "/usr/share/rofi/themes/fancy.rasi"

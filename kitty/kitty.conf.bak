@@ -2,7 +2,7 @@
 
 #: Fonts {{{
 
-font_family      Departure Mono
+font_family      IosevkaTerm Nerd Font
 font_size 14.0
 
 #: The foreground and background colors.
@@ -76,6 +76,6 @@ macos_option_as_alt yes
 
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Macchiato
+# Catppuccin-Mocha
 include current-theme.conf
 # END_KITTY_THEME

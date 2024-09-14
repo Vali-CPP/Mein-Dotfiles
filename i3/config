@@ -1,21 +1,16 @@
-
-
 #font letter
-font pango:JetBrainsMono Mono Bold 10
+font pango:IosevkaTermFont Mono Bold 10
 
 #System Essentials
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-exec_always --no-startup-id nitrogen --restore &
 exec_always --no-startup-id wal -R
-exec_always --no-startup-id betterlockscreen -w dim
-
+exec --no-startup-id ~/Downloads/activitywatch/aw-qt
 
 #Polybar
 exec_always --no-startup-id ~/scripts/polybar_launch.sh
@@ -28,22 +23,23 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-bindsym $mod+x split h
-bindsym $mod+y split v
-bindsym $mod+f fullscreen toggle
-floating_modifier $mod
-bindsym $mod+Return exec kitty
+bindsym $mod+Control+h move left
+bindsym $mod+Control+j move down
+bindsym $mod+Control+k move up
+bindsym $mod+Control+l move right
+bindsym $mod+Control+x split h
+bindsym $mod+Control+y split v
+bindsym $mod+Shift+f fullscreen toggle
+bindsym $mod+Control+Return exec kitty
 bindsym $mod+Shift+q kill
 bindsym $mod+e layout toggle split
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
-bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym $mod+p exec --no-startup-id ~/Scripts/flameshot_launch.sh
-bindsym $mod+Shift+x exec betterlockscreen -l dim
+bindsym $mod+control+space floating toggle
+bindsym $mod+space exec --no-startup-id rofi -i -show combi -show-icons 
+bindsym $mod+Shift+p exec --no-startup-id ~/scripts/flameshot_launch.sh
+bindsym $mod+Shift+u exec firefox
+bindsym $mod+Shift+i exec nemo
+bindsym $mod+Shift+o exec ~/scripts/obsidian_launch.sh
+
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -95,6 +91,9 @@ mode "resize" {
 
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
@@ -153,8 +152,8 @@ client.background        $base
 
 
 #gaps
-gaps outer 2
-gaps inner 10
+gaps outer 6
+gaps inner 1
 
-#windows
-default_border pixel 0
+#Bordes
+default_border pixel 1
