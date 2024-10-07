@@ -1,3 +1,4 @@
+theme agnoster
 theme batman
 theme default
 theme fishbone
@@ -5,5 +6,6 @@ theme fox
 theme godfather
 theme integral
 theme lambda
+theme neolambda
 theme random
 theme zish
